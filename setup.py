@@ -14,7 +14,7 @@ setuptools.setup(
         ],
     author=pkg.__author__,
     license=pkg.__license__,
-    url='https://github.com/shomah4a/sphinx-gist-embed',
+    url='https://github.com/shomah4a/sphinxcontrib.youtube',
     description='''embedding gist to sphinx''',
     long_description=pkg.__doc__,
     namespace_packages=['sphinxcontrib'],
