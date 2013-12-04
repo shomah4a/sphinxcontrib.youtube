@@ -23,7 +23,9 @@ def visit(self, node):
 
     video_id = get_video_id(node.url)
 
-    tag = u'''<iframe width="640" height="360" src="//www.youtube.com/embed/{0}?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>'''.format(video_id)
+    url = u'//www.youtube.com/embed/{0}?feature=player_detailpage'.format(video_id)
+
+    tag = u'''<iframe width="640" height="360" src="{0}" frameborder="0" allowfullscreen="1">&nbsp;</iframe>'''.format(url)
 
     self.body.append(tag)
 
