@@ -13,10 +13,11 @@ Contents:
 
 .. youtube:: http://www.youtube.com/watch?v=Ql9sn3aLLlI
 
+.. youtube:: Ql9sn3aLLlI
+
 Indices and tables
 ==================
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

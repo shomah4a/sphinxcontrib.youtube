@@ -18,29 +18,30 @@ class youtube(nodes.General, nodes.Element):
     pass
 
 
+def is_url(s):
+
+    if s.startswith('http://') or s.startswith('https://'):
+        return True
+
+    return False
+
 
 def get_video_id(url):
 
     return urlparse.parse_qs(urlparse.urlparse(url).query)['v'][0]
 
 
-
-
 def visit(self, node):
 
-    video_id = get_video_id(node.url)
-
-    url = u'//www.youtube.com/embed/{0}?feature=player_detailpage'.format(video_id)
-
+    video_id = node.video_id
+    url = u'//www.youtube.com/embed/{0}'.format(video_id)
     tag = u'''<iframe width="640" height="360" src="{0}" frameborder="0" allowfullscreen="1">&nbsp;</iframe>'''.format(url)
 
     self.body.append(tag)
 
 
-
 def depart(self, node):
     pass
-
 
 
 class YoutubeDirective(rst.Directive):
@@ -59,7 +60,11 @@ class YoutubeDirective(rst.Directive):
 
         node = self.node_class()
 
-        node.url = self.arguments[0]
+        arg = self.arguments[0]
+
+        if is_url(arg):
+            node.video_id = get_video_id(arg)
+        else:
+            node.video_id = arg
 
         return [node]
-
