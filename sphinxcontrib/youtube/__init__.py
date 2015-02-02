@@ -13,9 +13,13 @@ First of all, add `sphinxcontrib.youtube` to sphinx extension list in conf.py
 
 then use `youtube` directive.
 
+You can specify video by video url or video id.
+
 .. code-block:: rst
 
    .. youtube:: http://www.youtube.com/watch?v=Ql9sn3aLLlI
+
+   .. youtube:: Ql9sn3aLLlI
 
 
 finally, build your sphinx project.
