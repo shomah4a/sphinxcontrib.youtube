@@ -26,7 +26,7 @@ finally, build your sphinx project.
 
 '''
 
-__version__ = '0.1.2'
+__version__ = '0.2.0'
 __author__ = '@shomah4a'
 __license__ = 'LGPLv3'
 
@@ -39,4 +39,3 @@ def setup(app):
     app.add_node(youtube.youtube,
                  html=(youtube.visit, youtube.depart))
     app.add_directive('youtube', youtube.YoutubeDirective)
-
